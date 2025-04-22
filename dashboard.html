@@ -1,0 +1,78 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>dashboard</title>
+    <script src="https://kit.fontawesome.com/8f33e6a66e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+    <div id="dashboardMainContainer">
+        <div class="dashboardSidebar" id="dashboardSidebar">
+            <h3 class="dashboardLogo" id="dashboardLogo">IMS</h3>
+            <div class="dashboardSidebarUser">
+                <img src="/home/tiger/Downloads/NEA_pictures/guest.jpg" alt="user image" id="userImage"/>
+                <span>name</span>
+            </div>
+            <div class="dashboardSidebarMenus">
+                <ul class="dashboardMenuLists">
+                    <li class="menuActive">
+                        <a href=""><i class="fa-solid fa-house"></i><span class="menuText">Home</span></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-house"></i><span class="menuText">Home</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dashboardContentContainer" id="dashboardContentContainer">
+            <div class="dashboardContentNav">
+                <a href="" id="hamburger"><i class="fa-solid fa-bars"></i></a>
+                <a href="" id="logoutButton"><i class="fa-solid fa-power-off"></i>Log out</a>
+            </div>
+            <div class="dashboardContent">
+                <div class="dashboardContentMain">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+    var sideBarIsOpen = true
+
+    hamburger.addEventListener( 'click', (event) => {
+        event.preventDefault();
+
+        if(sideBarIsOpen){
+            dashboardSidebar.style.width = '5%';
+            dashboardContentContainer.style.width = "95%";
+            userImage.style.width = "60px";
+            dashboardLogo.style.fontSize = "40px"
+
+            menu = document.getElementsByClassName("menuText");
+            for(var i=0; i < menu.length;i++){
+                menu[i].style.display = 'none'
+        };
+
+            document.getElementsByClassName("dashboardMenuLists")[0].style.textAlign = "center";
+            sideBarIsOpen = false
+        }else{
+
+            dashboardSidebar.style.width = '17%';
+            dashboardContentContainer.style.width = "90%";
+            userImage.style.width = "20%";
+
+            menu = document.getElementsByClassName("menuText");
+            for(var i=0; i < menu.length;i++){
+                menu[i].style.display = 'inline-block'
+            };
+
+            document.getElementsByClassName("dashboardMenuLists")[0].style.textAlign = "normal";
+            sideBarIsOpen = true
+        }
+
+    });
+</script>    
+</body>
+</html>
